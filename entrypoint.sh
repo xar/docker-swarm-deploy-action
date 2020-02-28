@@ -36,6 +36,11 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
     
     cat /etc/ssh/ssh_known_hosts
     
+    echo "
+    Host *
+       StrictHostKeyChecking no
+    " >> "$HOME/.ssh/config"
+    
     ssh -T deploy@chatisto.com -p 222
 fi
 
