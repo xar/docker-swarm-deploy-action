@@ -34,15 +34,16 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
     echo "Add public key verify..."
     printf '%s %s\n' "$SSH_HOST" "$INPUT_SSH_PUBLIC_KEY" >> /etc/ssh/ssh_known_hosts
     
+    echo "Cat known hosts"
     cat /etc/ssh/ssh_known_hosts
     
     echo "
     Host *
        StrictHostKeyChecking no
     " >> "$HOME/.ssh/config"
-    
+    echo "Cat config"
     cat "$HOME/.ssh/config"
-    
+    echo "SSH test"
     ssh -T deploy@chatisto.com -p 222
 fi
 
