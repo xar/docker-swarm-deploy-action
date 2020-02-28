@@ -25,10 +25,10 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
 
     # Save private key to a file and register it with the agent.
     mkdir -p "$HOME/.ssh"
-    printf '%s' "$INPUT_SSH_PRIVATE_KEY" > "$HOME/.ssh/id_rsa"
-    chmod 600 "$HOME/.ssh/id_rsa"
+    printf '%s' "$INPUT_SSH_PRIVATE_KEY" > "$HOME/.ssh/docker"
+    chmod 600 "$HOME/.ssh/docker"
     eval $(ssh-agent)
-    ssh-add "$HOME/.ssh/id_rsa"
+    ssh-add "$HOME/.ssh/docker"
     
     # Add public key to known hosts.
     echo "Add public key verify..."
