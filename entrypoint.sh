@@ -34,7 +34,7 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
     echo "Add public key verify..."
     printf '%s %s\n' "$SSH_HOST" "$INPUT_SSH_PUBLIC_KEY" >> /etc/ssh/ssh_known_hosts
     
-    cat "$HOME/.ssh/known_hosts"
+    cat /etc/ssh/ssh_known_hosts
     
     ssh -T deploy@chatisto.com -p 222
 fi
