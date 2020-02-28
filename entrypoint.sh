@@ -41,10 +41,15 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
     Host *
        StrictHostKeyChecking no
     " >> "$HOME/.ssh/config"
+    
+    echo "Chmod 400 config"
+    chmod 400 "$HOME/.ssh/config"
+    
     echo "Cat config"
     cat "$HOME/.ssh/config"
+    
     echo "SSH test"
-    ssh -T deploy@chatisto.com -p 222
+    ssh -o StrictHostKeyChecking=no -T deploy@chatisto.com -p 222
 fi
 
 echo "Connecting to $INPUT_REMOTE_HOST..."
