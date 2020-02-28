@@ -22,8 +22,6 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
     fi
 
     echo "Registering SSH keys..."
-    
-    echo $INPUT_SSH_PUBLIC_KEY
 
     # Save private key to a file and register it with the agent.
     mkdir -p "$HOME/.ssh"
