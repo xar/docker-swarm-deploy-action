@@ -12,6 +12,6 @@ RUN apk --no-cache add openssh-client
 
 COPY entrypoint.sh /entrypoint.sh
 
-RUN ln -ls ~/.docker
+RUN ls -ln ~/.docker
 
 ENTRYPOINT ["/entrypoint.sh"]
