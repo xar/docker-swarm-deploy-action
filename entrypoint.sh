@@ -41,6 +41,8 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
        StrictHostKeyChecking no
     " >> "$HOME/.ssh/config"
     
+    cat "$HOME/.ssh/config"
+    
     ssh -T deploy@chatisto.com -p 222
 fi
 
