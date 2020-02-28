@@ -31,7 +31,7 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
     ssh-add "$HOME/.ssh/id_rsa"
     
     # Add public key to known hosts.
-    printf '%s %s\n' "$SSH_HOST" "$INPUT_SSH_PUBLIC_KEY" >> /etc/ssh/ssh_known_hosts
+    # printf '%s %s\n' "$SSH_HOST" "$INPUT_SSH_PUBLIC_KEY" >> /etc/ssh/ssh_known_hosts
 fi
 
 echo "Connecting to $INPUT_REMOTE_HOST..."
