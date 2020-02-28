@@ -45,9 +45,6 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
     echo "Chmod 400 config"
     chmod 400 "$HOME/.ssh/config"
     
-    echo "Cat config"
-    cat "$HOME/.ssh/config"
-    
     echo "SSH test"
     ssh -o StrictHostKeyChecking=no -T deploy@chatisto.com -p 222
 fi
