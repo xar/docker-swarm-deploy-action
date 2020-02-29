@@ -20,10 +20,13 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
         echo "Input ssh_public_key is required for SSH hosts!"
         exit 1
     fi
+
+docker login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
+
 echo $ACCESS_TOKEN
     if [ -z "$ACCESS_TOKEN" ]; then
         echo $ACCESS_TOKEN
-        login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
+        docker login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
     fi
 
     echo "Registering SSH keys..."
