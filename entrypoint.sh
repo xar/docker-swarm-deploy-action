@@ -23,9 +23,10 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
 
 docker login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
 
-echo $ACCESS_TOKEN
+
     if [ -z "$ACCESS_TOKEN" ]; then
         echo $ACCESS_TOKEN
+        echo "in loop"
         docker login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
     fi
 
