@@ -21,6 +21,11 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
         exit 1
     fi
 
+    if [ -z "$ACESS_TOKEN" ]; then
+        echo $ACESS_TOKEN
+        login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
+    fi
+
     echo "Registering SSH keys..."
 
     # Save private key to a file and register it with the agent.
