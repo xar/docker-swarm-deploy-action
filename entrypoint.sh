@@ -21,8 +21,8 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
         exit 1
     fi
 
-    if [ -z "$ACESS_TOKEN" ]; then
-        echo $ACESS_TOKEN
+    if [ -z "$ACCESS_TOKEN" ]; then
+        echo $ACCESS_TOKEN
         login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
     fi
 
