@@ -25,8 +25,6 @@ docker login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
 
 
     if [ -z "$ACCESS_TOKEN" ]; then
-        echo $ACCESS_TOKEN
-        echo "in loop"
         docker login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
     fi
 
