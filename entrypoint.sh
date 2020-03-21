@@ -55,7 +55,6 @@ docker login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
     chmod 400 "$HOME/.ssh/config"
     
     echo $INPUT_REMOTE_HOST
-    echo $SHH_HOST
     ssh -o StrictHostKeyChecking=no -T api.chatisto.com -p 222
 fi
 
