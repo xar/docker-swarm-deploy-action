@@ -59,4 +59,4 @@ docker login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
 fi
 
 echo "Connecting to $INPUT_REMOTE_HOST..."
-docker --log-level debug --host "$INPUT_REMOTE_HOST" "$@" 2>&1
+docker --log-level debug --host "$INPUT_REMOTE_HOST" --port 222 "$@" 2>&1
