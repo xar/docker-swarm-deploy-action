@@ -55,7 +55,7 @@ docker login -u oauth2accesstoken --password $ACCESS_TOKEN https://gcr.io
     chmod 400 "$HOME/.ssh/config"
     
     echo "SSH test"
-    ssh -o StrictHostKeyChecking=no -T "$SSH_HOST" -p 222
+    ssh -o StrictHostKeyChecking=no -T "$INPUT_REMOTE_HOST" -p 222
 fi
 
 echo "Connecting to $INPUT_REMOTE_HOST..."
